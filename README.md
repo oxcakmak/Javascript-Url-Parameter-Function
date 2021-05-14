@@ -6,3 +6,5 @@ var url = location.href;<br>
 insertParam("var", "value");<br>
 <h3>Removing a filter</h3>
 insertParam("var", url);<br>
+<h3>Note</h3>
+If the status is 1, it will do the redirect.
