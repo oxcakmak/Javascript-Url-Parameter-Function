@@ -3,7 +3,7 @@
 * https://stackoverflow.com/questions/486896/adding-a-parameter-to-the-url-with-javascript
 * https://stackoverflow.com/questions/16941104/remove-a-parameter-to-the-url-with-javascript
 */
-function insertParam(key, value) {
+function insertParam(key, value, status) {
     key = encodeURIComponent(key);
     value = encodeURIComponent(value);
     var kvp = document.location.search.substr(1).split("&");
@@ -20,10 +20,10 @@ function insertParam(key, value) {
         kvp[kvp.length] = [key,value].join("=");
     }
     let params = kvp.join("&");
-    document.location.search = params;
+    if(status!=1){ document.location.search = params; }
     url = document.location;
 }
-function removeParam(key, sourceURL) {
+function removeParam(key, sourceURL, status) {
     var rtn = sourceURL.split("?")[0],
         param,
         params_arr = [],
@@ -38,5 +38,5 @@ function removeParam(key, sourceURL) {
         }
         if (params_arr.length) rtn = rtn + "?" + params_arr.join("&");
     }
-    location.href = rtn;    
+    if(status!=1){ location.href = rtn; }    
 }
