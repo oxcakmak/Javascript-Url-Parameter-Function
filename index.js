@@ -21,7 +21,6 @@ function insertParam(key, value, status) {
     }
     let params = kvp.join("&");
     if(status!=1){ document.location.search = params; }
-    url = document.location;
 }
 function removeParam(key, sourceURL, status) {
     var rtn = sourceURL.split("?")[0],
